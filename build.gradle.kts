@@ -23,6 +23,7 @@ dependencies {
   // TEST
 
   testImplementation("org.junit.jupiter:junit-jupiter:5.5.2")
+  testImplementation("org.assertj:assertj-core:3.19.0")
 }
 
 tasks {

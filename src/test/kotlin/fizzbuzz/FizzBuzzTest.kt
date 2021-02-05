@@ -1,5 +1,6 @@
 package fizzbuzz
 
+import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.DynamicTest
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestFactory
@@ -12,6 +13,7 @@ class FizzBuzzTest {
     val fizzBuzz = listOf(
         TestCase("Simple", SimpleFizzBuzz::fizzBuzz),
         TestCase("Pure", NoMutationFizzBuzz::fizzBuzz),
+        TestCase("Generic", NoMutationGenericFizzBuzz::fizzBuzz),
     )
 
     return fizzBuzz.map {
@@ -23,26 +25,25 @@ class FizzBuzzTest {
         val result = it.function(inputRange)
 
         // then
-        assert(
-            result == listOf(
-                "FizzBuzz",
-                "1",
-                "2",
-                "Fizz",
-                "4",
-                "Buzz",
-                "Fizz",
-                "7",
-                "8",
-                "Fizz",
-                "Buzz",
-                "11",
-                "Fizz",
-                "13",
-                "14",
-                "FizzBuzz",
-            )
+        val expected = listOf(
+            "FizzBuzz",
+            "1",
+            "2",
+            "Fizz",
+            "4",
+            "Buzz",
+            "Fizz",
+            "7",
+            "8",
+            "Fizz",
+            "Buzz",
+            "11",
+            "Fizz",
+            "13",
+            "14",
+            "FizzBuzz",
         )
+        Assertions.assertThat(result).isEqualTo(expected)
       }
     }
   }
