@@ -14,6 +14,8 @@ class FizzBuzzTest {
         TestCase("Simple", SimpleFizzBuzz::fizzBuzz),
         TestCase("Pure", NoMutationFizzBuzz::fizzBuzz),
         TestCase("Generic", NoMutationGenericFizzBuzz::fizzBuzz),
+        TestCase("Functional", FunctionalFizzBuzz::fizzBuzz),
+        TestCase("GenericFunctional", GenericFunctionalFizzBuzz::fizzBuzz),
     )
 
     return fizzBuzz.map {

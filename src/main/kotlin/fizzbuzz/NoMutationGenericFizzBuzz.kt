@@ -8,7 +8,7 @@ object NoMutationGenericFizzBuzz : GenericFizzBuzz {
                 .filter { (divisor, _) -> number % divisor == 0 }
                 .joinToString(separator = "") { it.value }
         ) {
-          if(isEmpty()) number.toString() else this
+          if (isEmpty()) number.toString() else this
         }
       }
 }
