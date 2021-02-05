@@ -11,7 +11,7 @@ class FizzBuzzTest {
   fun `classic fizzbuzz`(): Iterable<DynamicTest> {
     val fizzBuzz = listOf(
         TestCase("Simple", SimpleFizzBuzz::fizzBuzz),
-//        TestCase("Simple", NoMutationFizzBuzz::fizzBuzz),
+        TestCase("Pure", NoMutationFizzBuzz::fizzBuzz),
     )
 
     return fizzBuzz.map {
