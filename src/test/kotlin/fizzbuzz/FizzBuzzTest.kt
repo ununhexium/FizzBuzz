@@ -2,7 +2,6 @@ package fizzbuzz
 
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.DynamicTest
-import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestFactory
 
 class FizzBuzzTest {
@@ -16,6 +15,7 @@ class FizzBuzzTest {
         TestCase("Generic", NoMutationGenericFizzBuzz::fizzBuzz),
         TestCase("Functional", FunctionalFizzBuzz::fizzBuzz),
         TestCase("GenericFunctional", GenericFunctionalFizzBuzz::fizzBuzz),
+        TestCase("Super", SuperFizzBuzz::fizzBuzz),
     )
 
     return fizzBuzz.map {
